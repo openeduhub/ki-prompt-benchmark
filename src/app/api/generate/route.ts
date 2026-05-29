@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { withRetry, isRateLimit } from '@/lib/llm-retry';
 
+export const runtime = 'nodejs';
+export const maxDuration = 60;
+
 function resolveEnvKey(providerType: string): string {
   if (providerType === 'openai') return process.env.OPENAI_API_KEY ?? '';
   if (providerType === 'bapi-academic') return process.env.B_API_KEY ?? process.env.GWDG_API_KEY ?? '';

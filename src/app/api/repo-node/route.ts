@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'nodejs';
+export const maxDuration = 30;
+
 const REPO_HOSTS: Record<string, string> = {
   prod: 'https://redaktion.openeduhub.net',
   staging: 'https://repository.staging.openeduhub.net',

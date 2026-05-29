@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'nodejs';
+export const maxDuration = 60;
+
 const EXTRACTION_HOSTS: Record<string, string> = {
   prod: 'https://text-extraction.prod.openeduhub.net',
   staging: 'https://text-extraction.staging.openeduhub.net',

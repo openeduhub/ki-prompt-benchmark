@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { withRetry } from '@/lib/llm-retry';
 
+export const runtime = 'nodejs';
+export const maxDuration = 60;
+
 const JUDGE_SYSTEM_PROMPT = `Du bist ein Evaluator für KI-generierte Bildungsmetadaten. Du bewertest zwei Outputs (A = Original-Prompt, B = Optimierter Prompt) für dasselbe Material und Feld.
 
 Bewerte nach diesen Kriterien (je 1–10):
